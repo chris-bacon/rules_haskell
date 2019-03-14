@@ -1,0 +1,18 @@
+load(
+    "@io_tweag_rules_haskell//haskell:haskell.bzl",
+    "haskell_library",
+)
+
+# rh_ghci_bug_a/BUILD.bazel
+package(default_visibility = ["//visibility:public"])
+
+haskell_library(
+    name = "a",
+    srcs = [
+        "src/A/A.hs",
+    ],
+    src_strip_prefix = "src",
+    deps = [
+        "//tests/hackage:base",
+    ],
+)
